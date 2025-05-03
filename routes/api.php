@@ -19,4 +19,9 @@ Route::prefix('v1/')->group(function () {
 
     Route::post('/payments', [PaymentController::class, 'store']);
 
+    Route::post('/slots', [ParkingSlotController::class, 'store']);
+    Route::put('{parkingSlot}', [ParkingSlotController::class, 'update']);
+    Route::delete('{parkingSlot}', [ParkingSlotController::class, 'destroy']);
+    Route::get('/available', [ParkingSlotController::class, 'available']);
+
 });
