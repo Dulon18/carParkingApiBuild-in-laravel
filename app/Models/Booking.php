@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 class Booking extends Model
 {
-    protected $fillable = ['user_id', 'vehicle_id', 'parking_slot_id', 'start_time', 'end_time', 'status'];
+    protected $fillable = ['user_id', 'vehicle_id', 'parking_slot_id',
+    'start_time', 'end_time', 'status'];
 
     public function user(): BelongsTo
     {

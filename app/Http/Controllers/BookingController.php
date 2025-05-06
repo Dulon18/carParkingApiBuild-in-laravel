@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Payment;
 use App\Models\Booking;
 use Illuminate\Http\Request;
 use App\Services\Contracts\BookingServiceInterface;
@@ -31,7 +31,10 @@ class BookingController extends Controller
     public function complete(Booking $booking)
     {
         $booking = $this->bookingService->complete($booking);
-        return response()->json($booking);
+        return response()->json([
+            'booking' => $booking->load('slot'),
+            'payment' => Payment::where('booking_id', $booking->id)->latest()->first(),
+        ]);
     }
 
     public function cancel(Booking $booking)

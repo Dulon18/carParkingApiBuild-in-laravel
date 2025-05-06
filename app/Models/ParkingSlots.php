@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 class ParkingSlots extends Model
 {
-    protected $fillable = ['parking_lot_id', 'slot_number', 'is_available', 'slot_type'];
+    protected $fillable = ['parking_lot_id', 'slot_number', 'is_available', 'slot_type','price_per_hour'];
 
     public function lot(): BelongsTo
     {
