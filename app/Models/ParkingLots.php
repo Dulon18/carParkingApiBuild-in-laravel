@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ParkingLotS extends Model
 {
-    protected $fillable = ['name', 'location', 'total_slots'];
+    protected $fillable = ['name', 'address','city','state','zip_code','total_slots'];
 
     public function slots(): HasMany
     {

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('parking_lot_id')->constrained()->onDelete('cascade');
             $table->string('slot_number');
             $table->boolean('is_available')->default(true);
-            $table->enum('slot_type', ['compact', 'large', 'electric']);
+            $table->enum('slot_type', ['compact', 'large', 'electric','reserved','premium']);
+            $table->decimal('price_per_hour', 10, 2);
             $table->timestamps();
         });
     }
