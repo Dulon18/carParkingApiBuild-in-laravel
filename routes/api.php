@@ -29,5 +29,4 @@ Route::prefix('v1/')->group(function () {
     Route::delete('/{parkingSlot}/delete', [ParkingSlotController::class, 'destroy']);
     Route::get('/available', [ParkingSlotController::class, 'available']);
 
-
 });
